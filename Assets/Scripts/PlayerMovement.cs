@@ -5,6 +5,7 @@ using UnityEngine;
 public class PlayerMovement : MonoBehaviour
 {
     [SerializeField] float PlayerSpd;
+    public bool isDialogueMode;
     float vAxis;
     Animator animator;
     
@@ -17,9 +18,13 @@ public class PlayerMovement : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        AnimParams();
-        KeyInput();
-        Move();
+        if (!isDialogueMode)
+        {
+            AnimParams();
+            KeyInput();
+            Move();
+        }
+        
     }
 
     //움직임 transform으로 간단하게 구현 움직일 수 있기만 하면 됨
@@ -48,5 +53,13 @@ public class PlayerMovement : MonoBehaviour
     void AnimParams()
     {
         animator.SetBool("isWalking", vAxis != 0);
+    }
+
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+        if(collision.tag == "KUI")
+        {
+            isDialogueMode = true;
+        }
     }
 }
