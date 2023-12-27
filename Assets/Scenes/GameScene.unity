@@ -306,7 +306,7 @@ GameObject:
   - component: {fileID: 440748354}
   m_Layer: 0
   m_Name: Tilemap
-  m_TagString: Untagged
+  m_TagString: Ground
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1125,7 +1125,7 @@ Canvas:
   m_AdditionalShaderChannelsFlag: 0
   m_UpdateRectTransformForStandalone: 0
   m_SortingLayerID: 0
-  m_SortingOrder: 0
+  m_SortingOrder: -1
   m_TargetDisplay: 0
 --- !u!224 &553364903
 RectTransform:
@@ -1520,11 +1520,11 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1036975193}
+  - component: {fileID: 1036975195}
   - component: {fileID: 1036975192}
   - component: {fileID: 1036975191}
   - component: {fileID: 1036975190}
   - component: {fileID: 1036975194}
-  - component: {fileID: 1036975195}
   m_Layer: 0
   m_Name: Player
   m_TagString: Untagged
@@ -1547,7 +1547,7 @@ Rigidbody2D:
   m_Mass: 1
   m_LinearDrag: 0
   m_AngularDrag: 0.05
-  m_GravityScale: 1
+  m_GravityScale: 2
   m_Material: {fileID: 0}
   m_IncludeLayers:
     serializedVersion: 2
@@ -1558,7 +1558,7 @@ Rigidbody2D:
   m_Interpolate: 0
   m_SleepingMode: 1
   m_CollisionDetection: 0
-  m_Constraints: 0
+  m_Constraints: 4
 --- !u!61 &1036975191
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -1705,6 +1705,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   PlayerSpd: 4
+  JumpPow: 8
 --- !u!1 &1092207733
 GameObject:
   m_ObjectHideFlags: 0
@@ -1853,7 +1854,7 @@ Canvas:
   m_Enabled: 1
   serializedVersion: 3
   m_RenderMode: 1
-  m_Camera: {fileID: 0}
+  m_Camera: {fileID: 996557866}
   m_PlaneDistance: 100
   m_PixelPerfect: 0
   m_ReceivesEvents: 1
@@ -1864,7 +1865,7 @@ Canvas:
   m_AdditionalShaderChannelsFlag: 25
   m_UpdateRectTransformForStandalone: 0
   m_SortingLayerID: 0
-  m_SortingOrder: 0
+  m_SortingOrder: 1
   m_TargetDisplay: 0
 --- !u!224 &1182865622
 RectTransform:

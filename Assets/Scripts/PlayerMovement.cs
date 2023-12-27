@@ -5,13 +5,18 @@ using UnityEngine;
 public class PlayerMovement : MonoBehaviour
 {
     [SerializeField] float PlayerSpd;
+    [SerializeField] float JumpPow;
     float vAxis;
+    bool isJumping;
     Animator animator;
-    
+    Rigidbody2D rigid;
+
     // Start is called before the first frame update
     void Awake()
     {
         animator = this.GetComponent<Animator>();
+        rigid = this.GetComponent<Rigidbody2D>();
+        isJumping = false;
     }
 
     // Update is called once per frame
@@ -20,6 +25,7 @@ public class PlayerMovement : MonoBehaviour
         AnimParams();
         KeyInput();
         Move();
+        if (Input.GetKeyDown(KeyCode.Space)) Jump();
     }
 
     //움직임 transform으로 간단하게 구현 움직일 수 있기만 하면 됨
@@ -48,5 +54,21 @@ public class PlayerMovement : MonoBehaviour
     void AnimParams()
     {
         animator.SetBool("isWalking", vAxis != 0);
+    }
+    void Jump()
+    {
+        if (!isJumping)
+        {
+            rigid.AddForce(Vector2.up * JumpPow, ForceMode2D.Impulse);
+            isJumping = true;
+        }
+    }
+
+    private void OnCollisionEnter2D(Collision2D collision)
+    {
+        if (collision.collider.tag == "Ground")
+        {
+            isJumping = false;
+        }
     }
 }
