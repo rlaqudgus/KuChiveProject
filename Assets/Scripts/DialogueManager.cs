@@ -8,6 +8,7 @@ public class DialogueManager : MonoBehaviour
     [SerializeField] List<string> dialList = new List<string>();
     [SerializeField] List<Image> imageList = new List<Image>();
     [SerializeField] PlayerMovement player;
+    [SerializeField] GameObject book;
     public bool switchDialogue;
     public int curDialNum = 0;
     public List<int> stopDialNum = new List<int>();
@@ -57,6 +58,8 @@ public class DialogueManager : MonoBehaviour
             if (bookDialNum.Contains(curDialNum))
             {
                 player.isBookMode = true;
+                book.SetActive(true);
+                Debug.Log("book down");
             }
         }
     }
