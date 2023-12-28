@@ -5,7 +5,10 @@ using UnityEngine;
 public class PlayerMovement : MonoBehaviour
 {
     [SerializeField] float PlayerSpd;
+    [SerializeField] DialogueManager dialogueManager;
+    public bool switchDialByPlayer;
     public bool isDialogueMode;
+    public bool isBookMode;
     float vAxis;
     Animator animator;
     
@@ -20,11 +23,10 @@ public class PlayerMovement : MonoBehaviour
     {
         if (!isDialogueMode)
         {
-            AnimParams();
             KeyInput();
             Move();
         }
-        
+        AnimParams();
     }
 
     //움직임 transform으로 간단하게 구현 움직일 수 있기만 하면 됨
@@ -53,13 +55,28 @@ public class PlayerMovement : MonoBehaviour
     void AnimParams()
     {
         animator.SetBool("isWalking", vAxis != 0);
+        if (isDialogueMode)
+        {
+            animator.SetBool("isWalking", false);
+        }
     }
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
+        //대화만 트리거하는놈
         if(collision.tag == "KUI")
         {
+            Debug.Log("KUI triggered");
             isDialogueMode = true;
+            dialogueManager.NextDialogue();
+            collision.gameObject.GetComponent<BoxCollider2D>().enabled = false;
+        }
+
+        //책 트리거하는 놈 구분
+        if (collision.tag == "KUIBook")
+        {
+            dialogueManager.NextDialogue();
+            collision.gameObject.GetComponent<BoxCollider2D>().enabled = false;
         }
     }
 }
