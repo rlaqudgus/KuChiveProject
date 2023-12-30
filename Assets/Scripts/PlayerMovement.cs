@@ -6,6 +6,10 @@ public class PlayerMovement : MonoBehaviour
 {
     [SerializeField] float PlayerSpd;
     [SerializeField] float JumpPow;
+    [SerializeField] DialogueManager dialogueManager;
+    public bool switchDialByPlayer;
+    public bool isDialogueMode;
+    public bool isBookMode;
     float vAxis;
     bool isJumping;
     Animator animator;
@@ -22,14 +26,18 @@ public class PlayerMovement : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        if (!isDialogueMode)
+        {
+            KeyInput();
+            Move();
+            if (Input.GetKeyDown(KeyCode.Space)) Jump();
+        }
         AnimParams();
-        KeyInput();
-        Move();
-        if (Input.GetKeyDown(KeyCode.Space)) Jump();
+
     }
 
-    //¿òÁ÷ÀÓ transformÀ¸·Î °£´ÜÇÏ°Ô ±¸Çö ¿òÁ÷ÀÏ ¼ö ÀÖ±â¸¸ ÇÏ¸é µÊ
-    //scale x ºÎÈ£ Á¶Á¤À¸·Î sprite ¹æÇâ ¹Ù²Ù±â
+    //ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ transformï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½Ï°ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ ï¿½Ö±â¸¸ ï¿½Ï¸ï¿½ ï¿½ï¿½
+    //scale x ï¿½ï¿½È£ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ sprite ï¿½ï¿½ï¿½ï¿½ ï¿½Ù²Ù±ï¿½
     void Move()
     {
         Vector2 newPos = new Vector2(transform.position.x + vAxis, transform.position.y);
@@ -54,6 +62,29 @@ public class PlayerMovement : MonoBehaviour
     void AnimParams()
     {
         animator.SetBool("isWalking", vAxis != 0);
+        if (isDialogueMode)
+        {
+            animator.SetBool("isWalking", false);
+        }
+    }
+
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+        //ï¿½ï¿½È­ï¿½ï¿½ Æ®ï¿½ï¿½ï¿½ï¿½ï¿½Ï´Â³ï¿½
+        if(collision.tag == "KUI")
+        {
+            Debug.Log("KUI triggered");
+            isDialogueMode = true;
+            dialogueManager.NextDialogue();
+            collision.gameObject.GetComponent<BoxCollider2D>().enabled = false;
+        }
+
+        //Ã¥ Æ®ï¿½ï¿½ï¿½ï¿½ï¿½Ï´ï¿½ ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½
+        if (collision.tag == "KUIBook")
+        {
+            dialogueManager.NextDialogue();
+            collision.gameObject.GetComponent<BoxCollider2D>().enabled = false;
+        }
     }
     void Jump()
     {
