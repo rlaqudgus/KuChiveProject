@@ -9,12 +9,15 @@ public class BoatMovement : MonoBehaviour
     [SerializeField] float CableSpd;
     [SerializeField] float CableEndPoint;
     [SerializeField] Camera MainCamera;
+    public int FishCount;
     enum State { BOAT, FISHING_DOWN, FISHING_UP, DOWN, UP};
     State state;
     Vector3 velo = Vector3.zero;
     Transform cable;
     Transform hook;
     float time;
+    bool _catch;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -23,6 +26,8 @@ public class BoatMovement : MonoBehaviour
         cable = this.transform.Find("cable");
         hook = this.transform.Find("hook");
         time = 0;
+        _catch = false;
+        FishCount = 0;
     }
     IEnumerator StateMachine()
     {
@@ -37,6 +42,7 @@ public class BoatMovement : MonoBehaviour
         Move();
         if (Input.GetKeyDown(KeyCode.Space)) ChangeState(State.DOWN);
         yield return null;
+        _catch = false;
     }
 
     void Move()
@@ -67,6 +73,12 @@ public class BoatMovement : MonoBehaviour
         hook.localPosition = new Vector3(0, 2.8f - (time * CableSpd) * 0.93f, 0);
         time += Time.deltaTime;
         if (hook.localPosition.y <= CableEndPoint) ChangeState(State.FISHING_UP);
+        if (_catch)
+        {
+            yield return new WaitForSeconds(1f);
+            ChangeState(State.FISHING_UP);
+            _catch = false;
+        }
         yield return null;
     }
     IEnumerator FISHING_UP()
@@ -75,7 +87,12 @@ public class BoatMovement : MonoBehaviour
         cable.localPosition = new Vector3(0, 3.3f - (time * CableSpd / 2f), 0);
         hook.localPosition = new Vector3(0, 2.8f - (time * CableSpd) * 0.93f, 0);
         time -= Time.deltaTime;
-        if (hook.localPosition.y >= 2.8f) ChangeState(State.UP);    
+        if (hook.localPosition.y >= 2.8f) ChangeState(State.UP);
+        if (_catch)
+        {
+            yield return new WaitForSeconds(1f);
+            _catch = false;
+        }
         yield return null;
     }
     IEnumerator UP()
@@ -98,6 +115,8 @@ public class BoatMovement : MonoBehaviour
         if (obj.tag == "Fish")
         {
             obj.GetComponent<FishMovement>().caught = true;
+            _catch = true;
+            FishCount++;
         }
     }
 }
