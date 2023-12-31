@@ -5,6 +5,8 @@ TagManager:
   serializedVersion: 2
   tags:
   - KUI
+  - Enemy
+  - Ground
   layers:
   - Default
   - TransparentFX
