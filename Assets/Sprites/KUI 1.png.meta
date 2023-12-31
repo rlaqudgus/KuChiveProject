@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: 67cd6c919c250494d9e572ea0cd9efc4
+guid: 82de7a0c7e17c9e4cba4ef7df89a2f91
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -123,13 +123,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: KoreaUnivStudent (3)_0
+      name: KUI 1_0
       rect:
         serializedVersion: 2
         x: 0
         y: 64
-        width: 32
-        height: 32
+        width: 64
+        height: 64
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -137,83 +137,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: e91018131c3d4234ca932b159fe951fc
-      internalID: -118586446
+      spriteID: 9e3d1371205d5ad48936344625d9b779
+      internalID: -868242683
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: KoreaUnivStudent (3)_1
-      rect:
-        serializedVersion: 2
-        x: 32
-        y: 64
-        width: 32
-        height: 32
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: cc8b94356dfdb434b89b2dec539871bc
-      internalID: 837962048
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: KoreaUnivStudent (3)_2
-      rect:
-        serializedVersion: 2
-        x: 0
-        y: 32
-        width: 32
-        height: 32
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 24c6392b8ec9b43499a76f3bf0cf7268
-      internalID: 1562386424
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: KoreaUnivStudent (3)_3
-      rect:
-        serializedVersion: 2
-        x: 32
-        y: 32
-        width: 32
-        height: 32
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: d4a0f15c5b9013c40a0c5a356e60951d
-      internalID: -1795564294
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: KoreaUnivStudent (3)_4
+      name: KUI 1_1
       rect:
         serializedVersion: 2
         x: 0
         y: 0
-        width: 32
-        height: 32
+        width: 64
+        height: 64
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -221,29 +158,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: b94286c6f9a69ec469cdb92ac71ce99a
-      internalID: -1647309534
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: KoreaUnivStudent (3)_5
-      rect:
-        serializedVersion: 2
-        x: 32
-        y: 0
-        width: 32
-        height: 32
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 11ed18aa3c349da4e82ed4abbc1eeb76
-      internalID: -667813597
+      spriteID: 80453b665e8ea7448b86703ddda29bbe
+      internalID: -612596096
       vertices: []
       indices: 
       edges: []
@@ -259,12 +175,8 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      KoreaUnivStudent (3)_0: -118586446
-      KoreaUnivStudent (3)_1: 837962048
-      KoreaUnivStudent (3)_2: 1562386424
-      KoreaUnivStudent (3)_3: -1795564294
-      KoreaUnivStudent (3)_4: -1647309534
-      KoreaUnivStudent (3)_5: -667813597
+      KUI 1_0: -868242683
+      KUI 1_1: -612596096
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
