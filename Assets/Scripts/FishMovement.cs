@@ -9,6 +9,7 @@ public class FishMovement : MonoBehaviour
     public bool caught;
     [SerializeField] float FishSpd;
     [SerializeField] float Duration;
+    [SerializeField] bool isGood;
     enum State { RIGHT, LEFT, STOP};
     State state;
     Vector3 velo = Vector3.zero;
@@ -103,6 +104,8 @@ public class FishMovement : MonoBehaviour
             yield return new WaitForSeconds(0.1f);
         }
         Destroy(gameObject);
+        if (isGood) ConsultingManager.AddFish();
+        else ConsultingManager.SubFish();
     }
     IEnumerator StateMachine()
     {

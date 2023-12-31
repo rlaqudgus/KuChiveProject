@@ -9,7 +9,6 @@ public class BoatMovement : MonoBehaviour
     [SerializeField] float CableSpd;
     [SerializeField] float CableEndPoint;
     [SerializeField] Camera MainCamera;
-    public int FishCount;
     enum State { BOAT, FISHING_DOWN, FISHING_UP, DOWN, UP};
     State state;
     Vector3 velo = Vector3.zero;
@@ -27,7 +26,6 @@ public class BoatMovement : MonoBehaviour
         hook = this.transform.Find("hook");
         time = 0;
         _catch = false;
-        FishCount = 0;
     }
     IEnumerator StateMachine()
     {
@@ -116,7 +114,6 @@ public class BoatMovement : MonoBehaviour
         {
             obj.GetComponent<FishMovement>().caught = true;
             _catch = true;
-            FishCount++;
         }
     }
 }
