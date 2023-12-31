@@ -9,6 +9,10 @@ public class DialogueManager : MonoBehaviour
     [SerializeField] List<Image> imageList = new List<Image>();
     [SerializeField] PlayerMovement player;
     [SerializeField] GameObject book;
+    [SerializeField] GameObject enemy;
+    [SerializeField] SceneLoader loader;
+    [SerializeField] int bookUp;
+    [SerializeField] int nextScene;
     public bool switchDialogue;
     public int curDialNum = 0;
     public List<int> stopDialNum = new List<int>();
@@ -57,11 +61,33 @@ public class DialogueManager : MonoBehaviour
             }
             if (bookDialNum.Contains(curDialNum))
             {
+                if (player.isBookMode==true)
+                {
+                    player.isBookMode = false;
+                    player.isDialogueMode = true;
+                    
+                    return;
+                }
                 player.isBookMode = true;
                 book.SetActive(true);
                 Debug.Log("book down");
             }
+            if(curDialNum == bookUp)
+            {
+                book.GetComponent<Animator>().SetTrigger("Up");
+            }
+            if (curDialNum == nextScene)
+            {
+                StartCoroutine(next());
+            }
         }
+    }
+
+    IEnumerator next()
+    {
+        enemy.GetComponent<Animator>().SetTrigger("disappear");
+        yield return new WaitForSeconds(2);
+        loader.LoadNextLevel();
     }
 
     void CurDialPrint()

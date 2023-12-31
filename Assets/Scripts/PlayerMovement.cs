@@ -72,11 +72,6 @@ public class PlayerMovement : MonoBehaviour
             collision.gameObject.GetComponent<BoxCollider2D>().enabled = false;
         }
 
-        //책 트리거하는 놈 구분
-        if (collision.tag == "KUIBook")
-        {
-            dialogueManager.NextDialogue();
-            collision.gameObject.GetComponent<BoxCollider2D>().enabled = false;
-        }
+        
     }
 }

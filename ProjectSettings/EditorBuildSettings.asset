@@ -8,4 +8,10 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/SampleScene.unity
     guid: 2cda990e2423bbf4892e6590ba056729
+  - enabled: 1
+    path: Assets/Scenes/DialogueScene_KBH.unity
+    guid: 8ae108c0b0408be47b2ab7662a0d0b33
+  - enabled: 1
+    path: Assets/Scenes/RunGameScene.unity
+    guid: 8adc1c8a82dcee749b5cd5645b1847a1
   m_configObjects: {}

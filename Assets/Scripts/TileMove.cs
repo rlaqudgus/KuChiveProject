@@ -14,6 +14,7 @@ public class TileMove : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        //gamestart할때 이 분기로 들어가게끔
         float movement = tileSpeed * Time.deltaTime;
         Vector2 newPos = new Vector2(transform.position.x - movement, transform.position.y);
         transform.position = newPos;
