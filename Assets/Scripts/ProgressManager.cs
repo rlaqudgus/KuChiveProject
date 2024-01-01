@@ -21,6 +21,12 @@ public class ProgressManager : MonoBehaviour
         //fillImg.fillAmount += Time.deltaTime/ProgressTime;
         Vector2 rect = new Vector2(fillImg.rectTransform.offsetMax.x + ((Time.deltaTime / ProgressTime) * 700), 0);
         fillImg.rectTransform.offsetMax = rect;
+
+        //bar가 특정 부분 이상 넘어가면 게임 종료
+        if (fillImg.rectTransform.offsetMax.x>0)
+        {
+            
+        }
     }
 
     IEnumerator fillGauge()

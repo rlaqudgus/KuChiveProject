@@ -7,6 +7,8 @@ TagManager:
   - KUI
   - Enemy
   - Ground
+  - ShieldItem
+  - PotionItem
   layers:
   - Default
   - TransparentFX

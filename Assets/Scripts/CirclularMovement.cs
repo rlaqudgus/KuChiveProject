@@ -59,36 +59,47 @@ public class CirclularMovement : MonoBehaviour
 
     IEnumerator StartBossAtk()
     {
-        target.gameObject.SetActive(false);
-
-        yield return new WaitForSeconds(3);
-        animator.SetTrigger("spawn");
-
-        for (int i = 0; i < objectNum; i++)
+        while(true)
         {
-            target.gameObject.SetActive(true);
-
-            yield return new WaitForSeconds(4);
-
-            Vector3 playerPos = player.transform.position;
-            GameObject currentShoot = transform.GetChild(i).gameObject;
-            //1초 전에 있었던 곳에 쏘기 플레이어가 피할 수 있어야하니까
             target.gameObject.SetActive(false);
-            shootPos = targetPos;
-            staticTarget.transform.position = shootPos;
-            staticTarget.gameObject.SetActive(true);
 
-            yield return new WaitForSeconds(1);
+            yield return new WaitForSeconds(5);
+            //다시 켜기
+            for (int i = 0; i < 4; i++)
+            {
+                transform.GetChild(i).gameObject.SetActive(true);
+            }
+            animator.SetTrigger("spawn");
 
-            Vector3 shootDir = shootPos - currentShoot.transform.position;
-            GameObject newobj = Instantiate(currentShoot, currentShoot.transform.position, Quaternion.identity);
+            for (int i = 0; i < objectNum; i++)
+            {
+                target.gameObject.SetActive(true);
 
-            newobj.GetComponent<Rigidbody2D>().AddForce(shootDir * 5, ForceMode2D.Impulse);
-            newobj.GetComponent<TrailRenderer>().enabled = true;
+                yield return new WaitForSeconds(4);
 
-            currentShoot.SetActive(false);
-            staticTarget.gameObject.SetActive(false);
+                Vector3 playerPos = player.transform.position;
+                GameObject currentShoot = transform.GetChild(i).gameObject;
+                //1초 전에 있었던 곳에 쏘기 플레이어가 피할 수 있어야하니까
+                target.gameObject.SetActive(false);
+                shootPos = targetPos;
+                staticTarget.transform.position = shootPos;
+                staticTarget.gameObject.SetActive(true);
+
+                yield return new WaitForSeconds(1);
+
+                Vector3 shootDir = shootPos - currentShoot.transform.position;
+                GameObject newobj = Instantiate(currentShoot, currentShoot.transform.position, Quaternion.identity);
+
+                newobj.GetComponent<Rigidbody2D>().AddForce(shootDir * 4, ForceMode2D.Impulse);
+                newobj.GetComponent<TrailRenderer>().enabled = true;
+
+                currentShoot.SetActive(false);
+                staticTarget.gameObject.SetActive(false);
+            }
+
+            animator.SetTrigger("retreat");
         }
+        
     }
 
     void Shoot(int i)

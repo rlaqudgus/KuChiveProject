@@ -9,9 +9,11 @@ public class RunGamePlayer : MonoBehaviour
     [SerializeField] float shakeAmount;
     [SerializeField] int jumpCount;
     [SerializeField] ProgressManager pm;
+    [SerializeField] GameObject shield;
     int jumpInit;
     Rigidbody2D rb;
     bool isGrounded;
+    bool isShieldState;
     Animator anim;
     // Start is called before the first frame update
     void Start()
@@ -42,12 +44,20 @@ public class RunGamePlayer : MonoBehaviour
     {
         if (pm.fillImg.rectTransform.offsetMax.x - 50 < -700) 
         {
-            Debug.Log("??");
-
             pm.fillImg.rectTransform.offsetMax = new Vector2(-700, 0);
             return;
         }
         pm.fillImg.rectTransform.offsetMax -= new Vector2(50,0);
+    }
+
+    void IncreaseBar()
+    {
+        if (pm.fillImg.rectTransform.offsetMax.x + 50 > 0)
+        {
+            pm.fillImg.rectTransform.offsetMax = new Vector2(0, 0);
+            return;
+        }
+        pm.fillImg.rectTransform.offsetMax += new Vector2(50, 0);
     }
 
     IEnumerator CameraShake(float ShakeAmount, float shakeTime)
@@ -64,6 +74,17 @@ public class RunGamePlayer : MonoBehaviour
         Camera.main.transform.position = new Vector3(0, 0, -10);
     }
 
+    IEnumerator ShieldPower()
+    {
+        isShieldState = true;
+        shield.gameObject.SetActive(true);
+
+        yield return new WaitForSeconds(3f);
+
+        shield.gameObject.SetActive(false);
+        isShieldState = false;
+    }
+
     private void OnCollisionEnter2D(Collision2D collision)
     {
         if (collision.gameObject.tag == "Ground")
@@ -76,10 +97,28 @@ public class RunGamePlayer : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
+        if (collision.gameObject.tag=="PotionItem") 
+        {
+            collision.gameObject.SetActive(false);
+            IncreaseBar();
+        }
+        if (collision.gameObject.tag == "ShieldItem")
+        {
+            collision.gameObject.SetActive(false);
+            StartCoroutine(ShieldPower());
+        }
         if (collision.gameObject.tag == "Enemy")
         {
+            if (isShieldState)
+            {
+                return;
+            }
             StartCoroutine(CameraShake(shakeTime, shakeAmount));
+           
             DecreaseBar();
         }
+
     }
+
+
 }
