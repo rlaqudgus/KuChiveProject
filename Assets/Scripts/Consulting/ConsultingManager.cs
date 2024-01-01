@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using Unity.VisualScripting;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class ConsultingManager
 {
@@ -18,8 +19,12 @@ public class ConsultingManager
 
     int fish_count = 0;
     int Chance = 10;
-    public static void AddFish() { Instance.fish_count++; }
+    bool tutorial = true;
+    public static void AddFish() { 
+        Instance.fish_count++;
+    }
     public static int GetFish() { return Instance.fish_count; }
+    public static void ResetFish() { Instance.fish_count = 0; }
     public static void SubChance() 
     { 
         Instance.Chance -= 1;
@@ -29,4 +34,7 @@ public class ConsultingManager
         }
     }
     public static int GetChance() { return Instance.Chance; }
+    public static void ResetChance() {  Instance.Chance = 10; }
+    public static void TutorialEnd() { Instance.tutorial = false; }
+    public static bool IsTutorial() {  return Instance.tutorial; }
 }
