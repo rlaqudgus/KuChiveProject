@@ -9,7 +9,8 @@ public class SceneLoader : MonoBehaviour
     [SerializeField] float transitionTime;
     [SerializeField] bool deleteStart;
     [SerializeField] bool deleteEnd;
-   
+    [SerializeField] GameObject sound;
+    AudioSource audioSrc;
 
     // Update is called once per frame
     void Update()
@@ -22,6 +23,7 @@ public class SceneLoader : MonoBehaviour
 
     private void Start()
     {
+        audioSrc = sound.GetComponent<AudioSource>();
         if (deleteStart) return;
         animator.SetTrigger("End");
     }
@@ -39,10 +41,24 @@ public class SceneLoader : MonoBehaviour
         if (!deleteEnd)
         {
             animator.SetTrigger("Start");
+            StartCoroutine(SceneBGMFadeOut());
 
             yield return new WaitForSeconds(transitionTime);
         }
-        
+
         SceneManager.LoadScene(sceneIndex);
     }
-}
+
+    IEnumerator SceneBGMFadeOut()
+    {
+        float speed = 0.05f;
+
+        while (audioSrc.volume != 0)
+        {
+            audioSrc.volume -= speed;
+
+            yield return new WaitForSeconds(0.1f);
+        }
+    }
+
+}   
