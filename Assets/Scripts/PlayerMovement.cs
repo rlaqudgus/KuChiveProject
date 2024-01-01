@@ -79,12 +79,7 @@ public class PlayerMovement : MonoBehaviour
             collision.gameObject.GetComponent<BoxCollider2D>().enabled = false;
         }
 
-        //å Ʈ�����ϴ� �� ����
-        if (collision.tag == "KUIBook")
-        {
-            dialogueManager.NextDialogue();
-            collision.gameObject.GetComponent<BoxCollider2D>().enabled = false;
-        }
+        
     }
     void Jump()
     {

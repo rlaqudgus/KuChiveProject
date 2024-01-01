@@ -9,6 +9,8 @@ TagManager:
   - KUI
   - Enemy
   - Ground
+  - ShieldItem
+  - PotionItem
   layers:
   - Default
   - TransparentFX
@@ -16,7 +18,7 @@ TagManager:
   - 
   - Water
   - UI
-  - 
+  - BarAnimation
   - 
   - 
   - 
