@@ -186,8 +186,8 @@ MonoBehaviour:
   caught: 0
   FishSpd: 2
   Duration: 1
-  CoolTime: 2
-  ShadowTime: 2
+  CoolTime: 3
+  ShadowTime: 5
   bad_img: {fileID: -1903289603, guid: 08c0497b0557da24f859d7a9a1bd1f6f, type: 3}
   isGood: 1
 --- !u!61 &964335620470001014

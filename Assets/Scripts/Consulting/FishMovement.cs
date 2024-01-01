@@ -130,6 +130,7 @@ public class FishMovement : MonoBehaviour
     }
     IEnumerator Caught()
     {
+        if (isGood) shadow.SetActive(false);
         float run_time = 0f;
         while (run_time < 0.4f)
         {
