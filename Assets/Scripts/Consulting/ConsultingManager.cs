@@ -17,7 +17,16 @@ public class ConsultingManager
     }
 
     int fish_count = 0;
+    int Chance = 10;
     public static void AddFish() { Instance.fish_count++; }
-    public static void SubFish() { Instance.fish_count -= Instance.fish_count == 0 ? 0 : 1; }
     public static int GetFish() { return Instance.fish_count; }
+    public static void SubChance() 
+    { 
+        Instance.Chance -= 1;
+        if (Instance.Chance < 0)
+        {
+            Debug.Log("FAIL");
+        }
+    }
+    public static int GetChance() { return Instance.Chance; }
 }

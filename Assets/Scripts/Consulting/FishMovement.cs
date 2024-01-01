@@ -9,27 +9,90 @@ public class FishMovement : MonoBehaviour
     public bool caught;
     [SerializeField] float FishSpd;
     [SerializeField] float Duration;
-    [SerializeField] bool isGood;
+    [SerializeField] float CoolTime;
+    [SerializeField] float ShadowTime;
+    [SerializeField] Sprite bad_img;
+    public bool isGood;
     enum State { RIGHT, LEFT, STOP};
     State state;
     Vector3 velo = Vector3.zero;
     float time;
+    float skill_cool;
     SpriteRenderer sr;
+    GameObject shadow;
     private void Start()
     {
         caught = false;
         state = State.STOP;
+        skill_cool = CoolTime;
+        if (isGood)
+        {
+            shadow = transform.Find("Shadow").gameObject;
+            shadow.SetActive(false);
+        }
         sr = gameObject.GetComponent<SpriteRenderer>();
         StartCoroutine(StateMachine());
     }
     private void Update()
     {
+        skill_cool += Time.deltaTime;
         if (caught)
         {
             StopAllCoroutines();
             StartCoroutine(Caught());
+            gameObject.GetComponent<BoxCollider2D>().enabled = false;
             caught = false;
         }
+        if (isGood && Input.GetKeyDown(KeyCode.Alpha3) && skill_cool > CoolTime) 
+        {
+            StartCoroutine(ViewShadow());
+        }
+    }
+    IEnumerator ViewShadow()
+    {
+        shadow.transform.position = new Vector2(transform.position.x, -4f);
+        shadow.SetActive(true);
+        yield return new WaitForSeconds(ShadowTime);
+        shadow.SetActive(false);
+    }
+    public void Dive(bool B_good)
+    {
+        StopAllCoroutines();
+        if (!B_good) GetComponent<SpriteRenderer>().sprite = bad_img;
+        StartCoroutine(DIVE(B_good));
+    }
+    IEnumerator DIVE(bool B_good)
+    {
+        float dive_depth = Random.Range(-6.0f, -8.0f);
+        while (transform.position.y > dive_depth)
+        {
+            transform.position = new Vector2(transform.position.x, transform.position.y - FishSpd * Time.deltaTime * 3);
+            yield return null;
+        }
+        if (!B_good) isGood = false;
+        StartCoroutine(StateMachine());
+    }
+    public void CommunicationBall(Vector3 pos)
+    {
+        if (!caught && transform.position.y >-9f)
+        {
+            StopAllCoroutines();
+            StartCoroutine(Hoi(pos));
+        }
+    }
+    IEnumerator Hoi(Vector3 pos)
+    {
+        while(transform.position != pos)
+        {
+            transform.position = new Vector2(transform.position.x + Time.deltaTime * (transform.position.x < pos.x ? 1 : -1),
+                transform.position.y + Time.deltaTime * (transform.position.y < pos.y && transform.position.y < -6f ? 1 : -1));
+            yield return null;
+        }
+    }
+    public void BallExit()
+    {
+        StopAllCoroutines();
+        StartCoroutine(StateMachine());
     }
     IEnumerator RIGHT()
     {
@@ -105,7 +168,6 @@ public class FishMovement : MonoBehaviour
         }
         Destroy(gameObject);
         if (isGood) ConsultingManager.AddFish();
-        else ConsultingManager.SubFish();
     }
     IEnumerator StateMachine()
     {

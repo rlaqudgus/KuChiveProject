@@ -99,7 +99,11 @@ public class BoatMovement : MonoBehaviour
         MainCamera.transform.position = Vector3.SmoothDamp(
            MainCamera.transform.position, new Vector3(0, 0, -10), ref velo, 0.1f);
         yield return null;
-        if (MainCamera.transform.position == new Vector3(0, 0, -10)) ChangeState(State.BOAT);
+        if (MainCamera.transform.position == new Vector3(0, 0, -10))
+        {
+            ChangeState(State.BOAT);
+            ConsultingManager.SubChance();
+        }
     }
 
     void ChangeState(State new_state)
