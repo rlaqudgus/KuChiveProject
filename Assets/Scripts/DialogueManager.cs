@@ -84,7 +84,7 @@ public class DialogueManager : MonoBehaviour
 
     IEnumerator next()
     {
-        enemy.GetComponent<Animator>().SetTrigger("disappear");
+        if(enemy!=null)enemy.GetComponent<Animator>().SetTrigger("disappear");
         yield return new WaitForSeconds(2);
         loader.LoadNextLevel();
     }

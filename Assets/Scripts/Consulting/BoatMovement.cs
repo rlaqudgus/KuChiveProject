@@ -9,6 +9,7 @@ public class BoatMovement : MonoBehaviour
     [SerializeField] float CableSpd;
     [SerializeField] float CableEndPoint;
     [SerializeField] Camera MainCamera;
+    public bool alive;
     enum State { BOAT, FISHING_DOWN, FISHING_UP, DOWN, UP};
     State state;
     Vector3 velo = Vector3.zero;
@@ -20,6 +21,7 @@ public class BoatMovement : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        alive = true;
         state = State.BOAT;
         StartCoroutine(StateMachine());
         cable = this.transform.Find("cable");
@@ -29,7 +31,8 @@ public class BoatMovement : MonoBehaviour
     }
     IEnumerator StateMachine()
     {
-        while (true)
+        while (ConsultingManager.IsTutorial()) yield return null;
+        while (alive)
         {
             yield return StartCoroutine(state.ToString());
         }

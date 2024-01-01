@@ -43,16 +43,22 @@ public class FishMovement : MonoBehaviour
             gameObject.GetComponent<BoxCollider2D>().enabled = false;
             caught = false;
         }
-        if (isGood && Input.GetKeyDown(KeyCode.Alpha3) && skill_cool > CoolTime) 
+        if (isGood && Input.GetKeyDown(KeyCode.Alpha3) && skill_cool > CoolTime &&!caught) 
         {
             StartCoroutine(ViewShadow());
         }
     }
     IEnumerator ViewShadow()
     {
-        shadow.transform.position = new Vector2(transform.position.x, -4f);
+        float s_time = 0;
+
         shadow.SetActive(true);
-        yield return new WaitForSeconds(ShadowTime);
+        while(s_time < ShadowTime)
+        {
+            s_time += Time.deltaTime;
+            if (shadow != null) shadow.transform.position = new Vector2(transform.position.x, -4f);
+            yield return null;
+        }
         shadow.SetActive(false);
     }
     public void Dive(bool B_good)
@@ -69,7 +75,11 @@ public class FishMovement : MonoBehaviour
             transform.position = new Vector2(transform.position.x, transform.position.y - FishSpd * Time.deltaTime * 3);
             yield return null;
         }
-        if (!B_good) isGood = false;
+        if (!B_good)
+        {
+            isGood = false;
+            Destroy(shadow.gameObject);
+        }
         StartCoroutine(StateMachine());
     }
     public void CommunicationBall(Vector3 pos)
