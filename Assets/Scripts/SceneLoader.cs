@@ -7,6 +7,8 @@ public class SceneLoader : MonoBehaviour
 {
     public Animator animator;
     [SerializeField] float transitionTime;
+    [SerializeField] bool deleteStart;
+    [SerializeField] bool deleteEnd;
    
 
     // Update is called once per frame
@@ -18,6 +20,12 @@ public class SceneLoader : MonoBehaviour
         }
     }
 
+    private void Start()
+    {
+        if (deleteStart) return;
+        animator.SetTrigger("End");
+    }
+
     public void LoadNextLevel()
     {
         StartCoroutine(LoadLevel(SceneManager.GetActiveScene().buildIndex + 1));
@@ -25,10 +33,13 @@ public class SceneLoader : MonoBehaviour
 
     IEnumerator LoadLevel(int sceneIndex)
     {
-        animator.SetTrigger("Start");
+        if (!deleteEnd)
+        {
+            animator.SetTrigger("Start");
 
-        yield return new WaitForSeconds(transitionTime);
-
+            yield return new WaitForSeconds(transitionTime);
+        }
+        
         SceneManager.LoadScene(sceneIndex);
     }
 }
