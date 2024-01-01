@@ -11,6 +11,7 @@ public class CirclularMovement : MonoBehaviour
     [SerializeField] RunGamePlayer player;
     [SerializeField] GameObject target;
     [SerializeField] GameObject staticTarget;
+    [SerializeField] ProgressManager pm;
     Vector3 targetPos;
     Vector3 shootPos;
     Animator animator;
@@ -49,6 +50,13 @@ public class CirclularMovement : MonoBehaviour
             }
         }
         FollowTarget();
+
+        if (pm.isFinished)
+        {
+            StopAllCoroutines();
+            target.SetActive(false);
+            staticTarget.SetActive(false);
+        }
     }
 
     void FollowTarget()

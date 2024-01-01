@@ -109,7 +109,7 @@ public class RunGamePlayer : MonoBehaviour
         }
         if (collision.gameObject.tag == "Enemy")
         {
-            if (isShieldState)
+            if (isShieldState || pm.isFinished)
             {
                 return;
             }

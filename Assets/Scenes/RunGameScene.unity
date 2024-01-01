@@ -998,7 +998,8 @@ PrefabInstance:
       propertyPath: m_SortingOrder
       value: 1
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 8766069547793935115, guid: f9673764d8757814d89b843165eaecc1, type: 3}
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents:
@@ -1063,6 +1064,23 @@ MonoBehaviour:
   fillImg: {fileID: 1570613736}
   boat: {fileID: 34966291}
   ProgressTime: 30
+  tm: {fileID: 968340681}
+  isFinished: 0
+  tileParent: {fileID: 195069723}
+  boss: {fileID: 1257122118}
+  player: {fileID: 139321481}
+  loader: {fileID: 408301253}
+--- !u!114 &408301253 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 2892827499578057076, guid: fd9593962b63ee44495a4d4ebb0763a7, type: 3}
+  m_PrefabInstance: {fileID: 5791376949626819942}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bbea3d36a76b32a448c248ce4ae0916a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &441673797
 GameObject:
   m_ObjectHideFlags: 0
@@ -1458,6 +1476,7 @@ MonoBehaviour:
   TileSpeed: 5
   initPos: {fileID: 1713743239}
   parent: {fileID: 195069725}
+  instantiatedTiles: []
 --- !u!4 &968340682
 Transform:
   m_ObjectHideFlags: 0
@@ -1625,7 +1644,8 @@ PrefabInstance:
       propertyPath: m_SortingOrder
       value: 1
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 8766069547793935115, guid: f9673764d8757814d89b843165eaecc1, type: 3}
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents:
@@ -1716,7 +1736,8 @@ PrefabInstance:
       propertyPath: m_SortingOrder
       value: 1
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 8766069547793935115, guid: f9673764d8757814d89b843165eaecc1, type: 3}
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents:
@@ -2104,6 +2125,7 @@ MonoBehaviour:
   player: {fileID: 139321481}
   target: {fileID: 1684301503}
   staticTarget: {fileID: 813296534}
+  pm: {fileID: 333799441}
 --- !u!95 &1257122122
 Animator:
   serializedVersion: 5
@@ -2621,7 +2643,8 @@ PrefabInstance:
       propertyPath: m_SortingOrder
       value: 1
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 8766069547793935115, guid: f9673764d8757814d89b843165eaecc1, type: 3}
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents:
@@ -2978,6 +3001,10 @@ PrefabInstance:
     - target: {fileID: 7026597880472470150, guid: 3d8a968b5b639d74f923411689000859, type: 3}
       propertyPath: tileSpeed
       value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 8411753184675453529, guid: 3d8a968b5b639d74f923411689000859, type: 3}
+      propertyPath: m_Color.a
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 8411753184675453529, guid: 3d8a968b5b639d74f923411689000859, type: 3}
       propertyPath: m_SortingOrder

@@ -9673,7 +9673,7 @@ GameObject:
   - component: {fileID: 3464235718923459716}
   - component: {fileID: 7023704712955943176}
   m_Layer: 0
-  m_Name: RunGameEnemy (4)
+  m_Name: RunGameEnemy
   m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -9819,7 +9819,7 @@ GameObject:
   - component: {fileID: 7076821090019502926}
   - component: {fileID: 6551292230539965772}
   m_Layer: 0
-  m_Name: RunGameEnemy (3)
+  m_Name: RunGameEnemy
   m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -10637,7 +10637,7 @@ GameObject:
   - component: {fileID: 2210757698746185812}
   - component: {fileID: 8646617921916447769}
   m_Layer: 0
-  m_Name: RunGameEnemy (1)
+  m_Name: RunGameEnemy
   m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -25419,7 +25419,7 @@ GameObject:
   - component: {fileID: 425203212518049548}
   - component: {fileID: 9208246267378005628}
   m_Layer: 0
-  m_Name: RunGameEnemy (2)
+  m_Name: RunGameEnemy
   m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

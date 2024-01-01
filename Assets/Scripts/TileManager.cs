@@ -5,9 +5,10 @@ using UnityEngine;
 public class TileManager : MonoBehaviour
 {
     [SerializeField] List<GameObject> GameTiles = new List<GameObject>();
-    [SerializeField] float TileSpeed;
+    public float TileSpeed;
     [SerializeField] GameObject initPos;
     [SerializeField] Transform parent;
+    public List<GameObject> instantiatedTiles = new List<GameObject>();
     // Start is called before the first frame update
     void Start()
     {
@@ -17,14 +18,22 @@ public class TileManager : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
+        foreach (var tile in instantiatedTiles) 
+        {
+            if (tile != null)
+            {
+                tile.GetComponent<TileMove>().tileSpeed = TileSpeed;
+
+            }
+        }
     }
 
     void InstantiateTile()
     {
         int randIndex = Random.Range(0, GameTiles.Count);
         GameObject tileObj = Instantiate(GameTiles[randIndex],initPos.transform.position, Quaternion.identity, parent);
-        tileObj.GetComponent<TileMove>().tileSpeed = TileSpeed;
+        instantiatedTiles.Add(tileObj);
+        //tileObj.GetComponent<TileMove>().tileSpeed = TileSpeed;
 
     }
 
