@@ -12,6 +12,7 @@ public class DialogueManager : MonoBehaviour
     [SerializeField] GameObject enemy;
     [SerializeField] SceneLoader loader;
     [SerializeField] int bookUp;
+    [SerializeField] int bookDown;
     [SerializeField] int nextScene;
     public bool switchDialogue;
     public int curDialNum = 0;
@@ -28,7 +29,7 @@ public class DialogueManager : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if(!player.isBookMode && player.isDialogueMode && Input.GetKeyDown(KeyCode.Space))
+        if(/*!player.isBookMode && */player.isDialogueMode && Input.GetKeyDown(KeyCode.Space))
         {
             //KeyInput();
             //CurDialSelect();
@@ -59,20 +60,18 @@ public class DialogueManager : MonoBehaviour
             {
                 player.isDialogueMode = false;
             }
-            if (bookDialNum.Contains(curDialNum))
+            if (curDialNum==bookDown)
             {
-                if (player.isBookMode==true)
-                {
-                    player.isBookMode = false;
-                    player.isDialogueMode = true;
-                    
-                    return;
-                }
-                player.isBookMode = true;
+                
                 book.SetActive(true);
+                //book.GetComponent<AutoFlip>().FlipRightPage();
                 Debug.Log("book down");
             }
-            if(curDialNum == bookUp)
+            if (bookDialNum.Contains(curDialNum))
+            {
+                book.GetComponent<AutoFlip>().FlipRightPage();
+            }
+            if (curDialNum == bookUp)
             {
                 book.GetComponent<Animator>().SetTrigger("Up");
             }

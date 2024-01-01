@@ -2450,6 +2450,10 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 1182865621}
     - target: {fileID: 11415212, guid: fe9bfb5044c0cc646baba1ad7d354100, type: 3}
+      propertyPath: interactable
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 11415212, guid: fe9bfb5044c0cc646baba1ad7d354100, type: 3}
       propertyPath: bookPages.Array.data[0]
       value: 
       objectReference: {fileID: 21300000, guid: b832dc10be04cef41b8d30f8743916c9, type: 3}
@@ -2483,7 +2487,7 @@ PrefabInstance:
       objectReference: {fileID: 21300000, guid: d657b8cc34d00ae499e571b0e6987ade, type: 3}
     - target: {fileID: 11415212, guid: fe9bfb5044c0cc646baba1ad7d354100, type: 3}
       propertyPath: OnFlip.m_PersistentCalls.m_Calls.Array.size
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 11415212, guid: fe9bfb5044c0cc646baba1ad7d354100, type: 3}
       propertyPath: OnFlip.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
@@ -2608,6 +2612,9 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 180032, guid: fe9bfb5044c0cc646baba1ad7d354100, type: 3}
       insertIndex: -1
       addedObject: {fileID: 1458661357}
+    - targetCorrespondingSourceObject: {fileID: 180032, guid: fe9bfb5044c0cc646baba1ad7d354100, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1458661358}
   m_SourcePrefab: {fileID: 100100000, guid: fe9bfb5044c0cc646baba1ad7d354100, type: 3}
 --- !u!1 &800877494
 GameObject:
@@ -2769,11 +2776,12 @@ MonoBehaviour:
   enemy: {fileID: 1612511239}
   loader: {fileID: 968784886}
   bookUp: 19
+  bookDown: 14
   nextScene: 31
   switchDialogue: 0
   curDialNum: 0
   stopDialNum: 020000000700000015000000
-  bookDialNum: 0e00000012000000
+  bookDialNum: 0f000000100000001100000012000000
   dialogueText: {fileID: 1092207735}
 --- !u!1 &841933985
 GameObject:
@@ -3916,6 +3924,25 @@ Animator:
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
   m_WriteDefaultValuesOnDisable: 0
+--- !u!114 &1458661358
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 249161742}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bef881b4c6ed71248b493dcd92c831a5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Mode: 0
+  PageFlipTime: 1
+  TimeBetweenPages: 1
+  DelayBeforeStarting: 0
+  AutoStartFlip: 0
+  ControledBook: {fileID: 0}
+  AnimationFramesCount: 40
 --- !u!1 &1508792353
 GameObject:
   m_ObjectHideFlags: 0
