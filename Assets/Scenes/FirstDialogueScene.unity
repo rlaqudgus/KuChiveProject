@@ -5155,6 +5155,14 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 1441531170795473521, guid: fd9593962b63ee44495a4d4ebb0763a7, type: 3}
+      propertyPath: m_ScreenMatchMode
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1441531170795473521, guid: fd9593962b63ee44495a4d4ebb0763a7, type: 3}
+      propertyPath: m_MatchWidthOrHeight
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 2892827499578057076, guid: fd9593962b63ee44495a4d4ebb0763a7, type: 3}
       propertyPath: sound
       value: 
