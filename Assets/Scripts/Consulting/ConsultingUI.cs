@@ -17,6 +17,8 @@ public class ConsultingUI : MonoBehaviour
 
     private void Start()
     {
+        ConsultingManager.ResetFish();
+        ConsultingManager.ResetChance();
         idx = 0;
         TutorialText = TutorialPanel.transform.Find("TutorialText").gameObject.GetComponent<Text>();
         if (ConsultingManager.IsTutorial())
@@ -24,6 +26,7 @@ public class ConsultingUI : MonoBehaviour
             TutorialPanel.SetActive(true);
             StartCoroutine(Tutorial());
         }
+        else TutorialPanel.SetActive(false);
     }
     void Update()
     {
@@ -54,8 +57,6 @@ public class ConsultingUI : MonoBehaviour
     }
     IEnumerator Fail()
     {
-        ConsultingManager.ResetFish();
-        ConsultingManager.ResetChance();
         Boat.alive = false;
         yield return new WaitForSeconds(1f);
         SceneLoader.LoadCurrentLevel();
