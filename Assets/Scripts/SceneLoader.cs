@@ -40,6 +40,7 @@ public class SceneLoader : MonoBehaviour
     {
         if (!deleteEnd)
         {
+            Debug.Log("Start");
             animator.SetTrigger("Start");
             StartCoroutine(SceneBGMFadeOut());
 

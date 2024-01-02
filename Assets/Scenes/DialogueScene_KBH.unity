@@ -5009,7 +5009,7 @@ PrefabInstance:
     - target: {fileID: 6191277545396559139, guid: b0dea98e0ffa59e41bffbd5bb266a72d, type: 3}
       propertyPath: m_audioClip
       value: 
-      objectReference: {fileID: 8300000, guid: 687ccb4b624104041b7cb05268edea7e, type: 3}
+      objectReference: {fileID: 8300000, guid: e983ec38a8012a347940df9a21343659, type: 3}
     - target: {fileID: 6960120368133594855, guid: b0dea98e0ffa59e41bffbd5bb266a72d, type: 3}
       propertyPath: m_Name
       value: Sound
