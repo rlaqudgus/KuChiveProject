@@ -18,7 +18,7 @@ public class SoundEffect : MonoBehaviour
 
         float speed = 0.05f;
 
-        while (audioSrc.volume < 0.5f)
+        while (audioSrc.volume < 0.4f)
         {
             audioSrc.volume += speed;
 

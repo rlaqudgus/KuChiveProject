@@ -4915,7 +4915,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Mode: 0
-  PageFlipTime: 1
+  PageFlipTime: 0.5
   TimeBetweenPages: 1
   DelayBeforeStarting: 0
   AutoStartFlip: 0
