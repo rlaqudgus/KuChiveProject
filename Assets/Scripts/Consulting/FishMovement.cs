@@ -36,16 +36,21 @@ public class FishMovement : MonoBehaviour
     private void Update()
     {
         skill_cool += Time.deltaTime;
-        if (caught)
-        {
-            StopAllCoroutines();
-            StartCoroutine(Caught());
-            gameObject.GetComponent<BoxCollider2D>().enabled = false;
-            caught = false;
-        }
+
+        Caught();
         if (isGood && Input.GetKeyDown(KeyCode.Alpha3) && skill_cool > CoolTime &&!caught) 
         {
             StartCoroutine(ViewShadow());
+        }
+    }
+    void Caught()
+    {
+        if (caught)
+        {
+            StopAllCoroutines();
+            StartCoroutine(CAUGHT());
+            gameObject.GetComponent<BoxCollider2D>().enabled = false;
+            caught = false;
         }
     }
     IEnumerator ViewShadow()
@@ -94,15 +99,22 @@ public class FishMovement : MonoBehaviour
     {
         while(transform.position != pos)
         {
-            transform.position = new Vector2(transform.position.x + Time.deltaTime * (transform.position.x < pos.x ? 1 : -1),
-                transform.position.y + Time.deltaTime * (transform.position.y < pos.y && transform.position.y < -6f ? 1 : -1));
+            Caught();
+            if (!caught)
+            {
+                transform.position = new Vector2(transform.position.x + Time.deltaTime * (transform.position.x < pos.x ? 1 : -1),
+                    transform.position.y + Time.deltaTime * (transform.position.y < pos.y && transform.position.y < -6f ? 1 : -1));
+            }
             yield return null;
         }
     }
     public void BallExit()
     {
-        StopAllCoroutines();
-        StartCoroutine(StateMachine());
+        if (!caught)
+        {
+            StopAllCoroutines();
+            StartCoroutine(StateMachine());
+        }
     }
     IEnumerator RIGHT()
     {
@@ -138,7 +150,7 @@ public class FishMovement : MonoBehaviour
         State next_state = (State)Random.Range(0, 3);
         ChangeState(next_state);
     }
-    IEnumerator Caught()
+    IEnumerator CAUGHT()
     {
         if (isGood) shadow.SetActive(false);
         float run_time = 0f;
