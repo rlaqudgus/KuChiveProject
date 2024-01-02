@@ -140,7 +140,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &8720210
 RectTransform:
   m_ObjectHideFlags: 0
@@ -158,8 +158,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: -199.99994, y: 400}
-  m_SizeDelta: {x: -800.00006, y: -900}
+  m_AnchoredPosition: {x: -224.99994, y: 400}
+  m_SizeDelta: {x: -750, y: -900}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &8720211
 MonoBehaviour:
@@ -174,7 +174,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_Color: {r: 0.1981132, g: 0.1981132, b: 0.1981132, a: 1}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
@@ -551,8 +551,11 @@ MonoBehaviour:
   ChanceText: {fileID: 1920945197}
   TutorialPanel: {fileID: 8720209}
   TutorialList:
-  - "\uC5EC\uAE30\uAC00 \uBC14\uB85C \uB108\uC758 \uB9C8\uC74C\uC18D\uC774\uC57C"
-  - "\uD770\uC0C9\uC758 \uC544\uC774\uB514\uC5B4\uB4E4\uC744 \uB09A\uC544\uBCF4\uC790\uAD6C"
+  - "\uC5EC\uAE30\uB294 \uB124 \uB9C8\uC74C\uC18D\uC774\uC57C. \uC774 \uC548\uC5D0\uC11C
+    \uC6B0\uB9AC\uC758 \uD574\uB2F5\uC744 \uCC3E\uC544\uBCF4\uC790"
+  - "\uD770 \uBB3C\uACE0\uAE30\uB294 \uB9C9\uB9C9\uD55C \uB108\uB97C \uC704\uD55C
+    \uC544\uC774\uB514\uC5B4\uC57C. \uBC88\uB729\uC774\uB294 \uD574\uACB0\uCC45\uC744
+    \uCC3E\uB294\uAC70\uC57C"
   - "\uAC80\uC740 \uBB3C\uACE0\uAE30\uB294 \uC7A1\uC0DD\uAC01\uC774\uC57C. \uC798
     \uD53C\uD574\uC11C \uB09A\uC544\uC57C \uD574"
   - "1\uC744 \uB204\uB974\uBA74 \uB0B4\uAC00 \uC0AC\uD68C\uC131\uC744 \uBC1C\uD718\uD574\uC11C
@@ -1284,8 +1287,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   BoatSpd: 5
-  CableSpd: 10
-  CableEndPoint: -10
+  CableSpd: 15
+  CableEndPoint: -15
   MainCamera: {fileID: 519420031}
   alive: 0
 --- !u!50 &902276808
@@ -2310,7 +2313,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 0.19607843, g: 0.19607843, b: 0.19607843, a: 1}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
@@ -2319,7 +2322,7 @@ MonoBehaviour:
       m_Calls: []
   m_FontData:
     m_Font: {fileID: 10102, guid: 0000000000000000e000000000000000, type: 0}
-    m_FontSize: 50
+    m_FontSize: 45
     m_FontStyle: 0
     m_BestFit: 0
     m_MinSize: 0
@@ -2329,8 +2332,9 @@ MonoBehaviour:
     m_RichText: 1
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
-    m_LineSpacing: 1
-  m_Text: "\uC5EC\uAE30\uAC00 \uBC14\uB85C \uB108\uC758 \uB9C8\uC74C\uC18D\uC774\uC57C"
+    m_LineSpacing: 1.2
+  m_Text: "\uC5EC\uAE30\uB294 \uB124 \uB9C8\uC74C\uC18D\uC774\uC57C. \uC774 \uC548\uC5D0\uC11C
+    \uC6B0\uB9AC\uC758 \uD574\uB2F5\uC744 \uCC3E\uC544\uBCF4\uC790"
 --- !u!222 &1840811593
 CanvasRenderer:
   m_ObjectHideFlags: 0

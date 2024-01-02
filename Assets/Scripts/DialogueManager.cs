@@ -11,6 +11,7 @@ public class DialogueManager : MonoBehaviour
     [SerializeField] GameObject book;
     [SerializeField] GameObject enemy;
     [SerializeField] SceneLoader loader;
+    [SerializeField] CurtainEnding ending;
     [SerializeField] int bookUp;
     [SerializeField] int bookDown;
     [SerializeField] int nextScene;
@@ -86,7 +87,8 @@ public class DialogueManager : MonoBehaviour
     {
         if(enemy!=null)enemy.GetComponent<Animator>().SetTrigger("disappear");
         yield return new WaitForSeconds(2);
-        loader.LoadNextLevel();
+        if (ending) ending.Ending();
+        else loader.LoadNextLevel();
     }
 
     void CurDialPrint()

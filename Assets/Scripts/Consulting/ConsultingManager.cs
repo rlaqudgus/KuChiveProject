@@ -37,4 +37,5 @@ public class ConsultingManager
     public static void ResetChance() {  Instance.Chance = 10; }
     public static void TutorialEnd() { Instance.tutorial = false; }
     public static bool IsTutorial() {  return Instance.tutorial; }
+    public static void ResetTutorial() { Instance.tutorial = true; }
 }
