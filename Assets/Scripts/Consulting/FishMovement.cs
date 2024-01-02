@@ -59,7 +59,7 @@ public class FishMovement : MonoBehaviour
             if (shadow != null) shadow.transform.position = new Vector2(transform.position.x, -4f);
             yield return null;
         }
-        shadow.SetActive(false);
+        if(shadow!=null)shadow.SetActive(false);
     }
     public void Dive(bool B_good)
     {

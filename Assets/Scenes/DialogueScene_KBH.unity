@@ -2796,6 +2796,7 @@ MonoBehaviour:
   book: {fileID: 249161742}
   enemy: {fileID: 1612511239}
   loader: {fileID: 968784886}
+  ending: {fileID: 0}
   bookUp: 19
   bookDown: 14
   nextScene: 31
@@ -3560,8 +3561,8 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 1
     m_LineSpacing: 1
-  m_Text: "\uC0C1\uB2F4\uC744 \uBC1B\uC73C\uB2C8 \uC6A9\uAE30\uAC00 \uB098\uB294
-    \uAC83 \uAC19\uC544!"
+  m_Text: "\uB8F0\uB8E8\uB8E8~ \uC774\uC81C \uB0B4 \uC801\uC131\uC744 \uC880 \uC54C
+    \uAC70 \uAC19\uC544"
 --- !u!222 &1092207736
 CanvasRenderer:
   m_ObjectHideFlags: 0

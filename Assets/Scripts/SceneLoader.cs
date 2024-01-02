@@ -23,7 +23,7 @@ public class SceneLoader : MonoBehaviour
 
     private void Start()
     {
-        audioSrc = sound.GetComponent<AudioSource>();
+        if(sound!=null)audioSrc = sound.GetComponent<AudioSource>();
         if (deleteStart) return;
         animator.SetTrigger("End");
     }
@@ -52,12 +52,14 @@ public class SceneLoader : MonoBehaviour
     IEnumerator SceneBGMFadeOut()
     {
         float speed = 0.05f;
-
-        while (audioSrc.volume != 0)
+        if (audioSrc != null)
         {
-            audioSrc.volume -= speed;
+            while (audioSrc.volume != 0)
+            {
+                audioSrc.volume -= speed;
 
-            yield return new WaitForSeconds(0.1f);
+                yield return new WaitForSeconds(0.1f);
+            }
         }
     }
 
