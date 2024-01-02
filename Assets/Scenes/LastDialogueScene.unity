@@ -2506,9 +2506,41 @@ PrefabInstance:
       propertyPath: m_SortingLayerID
       value: 1598851021
       objectReference: {fileID: 0}
+    - target: {fileID: 873667147057004301, guid: bfd9b102d08b72f48b3e918b9444eba1, type: 3}
+      propertyPath: m_Text
+      value: <b><color=red>Press Space to Play Again!</color></b>
+      objectReference: {fileID: 0}
+    - target: {fileID: 873667147057004301, guid: bfd9b102d08b72f48b3e918b9444eba1, type: 3}
+      propertyPath: m_FontData.m_Font
+      value: 
+      objectReference: {fileID: 12800000, guid: e3265ab4bf004d28a9537516768c1c75, type: 3}
+    - target: {fileID: 873667147057004301, guid: bfd9b102d08b72f48b3e918b9444eba1, type: 3}
+      propertyPath: m_FontData.m_FontStyle
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1528529894194104053, guid: bfd9b102d08b72f48b3e918b9444eba1, type: 3}
+      propertyPath: m_SizeDelta.x
+      value: 400
+      objectReference: {fileID: 0}
     - target: {fileID: 1883373725970750431, guid: bfd9b102d08b72f48b3e918b9444eba1, type: 3}
       propertyPath: m_Name
       value: Ending
+      objectReference: {fileID: 0}
+    - target: {fileID: 4239374047151668510, guid: bfd9b102d08b72f48b3e918b9444eba1, type: 3}
+      propertyPath: m_Type
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4239374047151668510, guid: bfd9b102d08b72f48b3e918b9444eba1, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 1602344790, guid: 5614816e8d205cb4b96294dba412f930, type: 3}
+    - target: {fileID: 7133723381262179526, guid: bfd9b102d08b72f48b3e918b9444eba1, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7133723381262179526, guid: bfd9b102d08b72f48b3e918b9444eba1, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: -54
       objectReference: {fileID: 0}
     - target: {fileID: 7963379428565077022, guid: bfd9b102d08b72f48b3e918b9444eba1, type: 3}
       propertyPath: m_LocalPosition.x
@@ -2557,6 +2589,14 @@ PrefabInstance:
     - target: {fileID: 8102490401503575354, guid: bfd9b102d08b72f48b3e918b9444eba1, type: 3}
       propertyPath: m_SortingLayerID
       value: 1598851021
+      objectReference: {fileID: 0}
+    - target: {fileID: 8182006484876238623, guid: bfd9b102d08b72f48b3e918b9444eba1, type: 3}
+      propertyPath: m_SizeDelta.x
+      value: 160
+      objectReference: {fileID: 0}
+    - target: {fileID: 8182006484876238623, guid: bfd9b102d08b72f48b3e918b9444eba1, type: 3}
+      propertyPath: m_SizeDelta.y
+      value: 80
       objectReference: {fileID: 0}
     - target: {fileID: 8819173896402270720, guid: bfd9b102d08b72f48b3e918b9444eba1, type: 3}
       propertyPath: camera_t
@@ -2998,6 +3038,67 @@ PrefabInstance:
       insertIndex: -1
       addedObject: {fileID: 1458661358}
   m_SourcePrefab: {fileID: 100100000, guid: fe9bfb5044c0cc646baba1ad7d354100, type: 3}
+--- !u!1001 &700144159
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 3855446548924222714, guid: b0dea98e0ffa59e41bffbd5bb266a72d, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 250.25
+      objectReference: {fileID: 0}
+    - target: {fileID: 3855446548924222714, guid: b0dea98e0ffa59e41bffbd5bb266a72d, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 104.39379
+      objectReference: {fileID: 0}
+    - target: {fileID: 3855446548924222714, guid: b0dea98e0ffa59e41bffbd5bb266a72d, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3855446548924222714, guid: b0dea98e0ffa59e41bffbd5bb266a72d, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3855446548924222714, guid: b0dea98e0ffa59e41bffbd5bb266a72d, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3855446548924222714, guid: b0dea98e0ffa59e41bffbd5bb266a72d, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3855446548924222714, guid: b0dea98e0ffa59e41bffbd5bb266a72d, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3855446548924222714, guid: b0dea98e0ffa59e41bffbd5bb266a72d, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3855446548924222714, guid: b0dea98e0ffa59e41bffbd5bb266a72d, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3855446548924222714, guid: b0dea98e0ffa59e41bffbd5bb266a72d, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6191277545396559139, guid: b0dea98e0ffa59e41bffbd5bb266a72d, type: 3}
+      propertyPath: m_audioClip
+      value: 
+      objectReference: {fileID: 8300000, guid: 687ccb4b624104041b7cb05268edea7e, type: 3}
+    - target: {fileID: 6960120368133594855, guid: b0dea98e0ffa59e41bffbd5bb266a72d, type: 3}
+      propertyPath: m_Name
+      value: Sound
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: b0dea98e0ffa59e41bffbd5bb266a72d, type: 3}
 --- !u!1 &800877494
 GameObject:
   m_ObjectHideFlags: 0
@@ -3043,29 +3144,30 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   dialList:
-  - "\uB4DC\uB514\uC5B4 \uC878\uC5C5\uC774\uAD6C\uB098"
+  - "\uB4DC\uB514\uC5B4 \uC878\uC5C5\uC774\uAD6C\uB098..!"
   - "\uC804\uC5D0\uB294 \uB9C9\uB9C9\uD558\uAE30\uB9CC \uD588\uB294\uB370... \uC774\uC820
-    \uC880 \uB354 \uB2F9\uB2F9\uD574 \uC9C8 \uC218 \uC788\uC744 \uAC70 \uAC19\uC544"
-  - "\uC774\uAC8C \uB2E4 \uCFE0\uCE74\uC774\uBE0C \uB355\uBD84\uC774\uC57C"
+    \uC880 \uB354 \uB2F9\uB2F9\uD574 \uC9C8 \uC218 \uC788\uC744 \uAC70 \uAC19\uC544!"
+  - "\uC774\uAC8C \uB2E4 \uCFE0\uCE74\uC774\uBE0C \uB355\uBD84\uC774\uC57C. \uC800\uAE30
+    \uD638\uC774\uD558\uACE0 \uCFE0\uC774\uAC00 \uC788\uC5B4! \uAC00\uBCF4\uC790!"
   - "\uC878\uC5C5 \uCD95\uD558\uD574!!"
-  - "\uC640! \uC774\uB807\uAC8C \uC640\uC918\uC11C \uACE0\uB9C8\uC6CC"
+  - "\uC640! \uC774\uB807\uAC8C \uC640\uC918\uC11C \uACE0\uB9C8\uC6CC!"
   - "\uB355\uBD84\uC5D0 \uCFE0\uCE74\uC774\uBE0C\uB85C \uB9CE\uC740 \uAC83\uC744
-    \uBC30\uC6B0\uACE0 \uC131\uC7A5\uD560 \uC218 \uC788\uC5C8\uC5B4"
+    \uBC30\uC6B0\uACE0 \uC131\uC7A5\uD560 \uC218 \uC788\uC5C8\uC5B4."
   - "\uCFE0\uCE74\uC774\uBE0C \uB355\uBD84\uC5D0 \uBBF8\uB798 \uACC4\uD68D\uB3C4
     \uC798 \uC9DC\uACE0 \uB2E4\uC591\uD55C \uD504\uB85C\uC81D\uD2B8 \uACBD\uD5D8\uB3C4
-    \uCC59\uACBC"
+    \uCC59\uACBC\uC5B4."
   - "\uC774\uC81C \uC878\uC5C5\uC774 \uB450\uB835\uC9C0 \uC54A\uC544!"
   - "\uC774\uC81C \uC878\uC5C5\uD574\uC11C \uB354 \uBA4B\uC9C4 \uB0A0\uC774 \uAE30\uB2E4\uB9AC\uACE0
-    \uC788\uC744\uAC70\uC57C"
-  - "\uC6B0\uB9AC \uBCF4\uACE0\uC2F6\uC73C\uBA74 \uC5B8\uC81C\uB4E0\uC9C0 \uB180\uB7EC\uC624\uB77C\uACE0"
+    \uC788\uC744\uAC70\uC57C!"
+  - "\uC6B0\uB9AC \uBCF4\uACE0\uC2F6\uC73C\uBA74 \uC5B8\uC81C\uB4E0\uC9C0 \uB180\uB7EC\uC624\uB77C\uACE0~!"
   - "\uD6C4\uBC30\uB4E4\uC5D0\uAC8C\uB3C4 \uCFE0\uCE74\uC774\uBE0C \uD1B5\uD574\uC11C
-    \uC88B\uC740 \uACB0\uACFC \uC5BB\uC744 \uC218 \uC788\uB3C4\uB85D \uD64D\uBCF4\uD560\uAC8C"
+    \uC88B\uC740 \uACB0\uACFC \uC5BB\uC744 \uC218 \uC788\uB3C4\uB85D \uD64D\uBCF4\uD560\uAC8C."
   - "\uC774\uB807\uAC8C \uC88B\uC740 \uAC78 \uB098\uB9CC \uC54C\uACE0 \uC788\uC744
-    \uC21C \uC5C6\uC9C0"
+    \uC21C \uC5C6\uC9C0!"
   - "\uC88B\uC544! \uD559\uAD50 \uD3EC\uD138\uC744 \uD1B5\uD574\uC11C \uB4E4\uC5B4\uC624\uAC70\uB098
-    \uAC80\uC0C9\uCC3D\uC5D0 \"\uCFE0\uCE74\uC774\uBE0C\"\uB97C \uAC80\uC0C9\uD574\uBCF4\uB77C\uAD6C"
+    \uAC80\uC0C9\uCC3D\uC5D0 \"\uCFE0\uCE74\uC774\uBE0C\"\uB97C \uAC80\uC0C9\uD574\uBCF4\uB77C\uAD6C."
   - "\uB2E4 \uAC19\uC774 \uD559\uAD50 \uC0DD\uD65C \uC990\uAC81\uACE0 \uC54C\uCC28\uAC8C
-    \uBCF4\uB0B4\uBCF4\uC790~"
+    \uBCF4\uB0B4\uBCF4\uC790~!"
   imageList:
   - {fileID: 1005200150}
   - {fileID: 1005200150}
@@ -5136,3 +5238,4 @@ SceneRoots:
   - {fileID: 1740086690}
   - {fileID: 1612511242}
   - {fileID: 482610744}
+  - {fileID: 700144159}

@@ -7,6 +7,7 @@ using UnityEngine.SceneManagement;
 public class StartScene : MonoBehaviour
 {
     [SerializeField] GameObject Text;
+    [SerializeField] SceneLoader loader;
     // Start is called before the first frame update
     void Start()
     {
@@ -16,7 +17,7 @@ public class StartScene : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (Input.GetKeyDown(KeyCode.Space)) SceneManager.LoadScene(1);
+        if (Input.GetKeyDown(KeyCode.Space)) loader.LoadNextLevel();
     }
 
     IEnumerator TEXT()
