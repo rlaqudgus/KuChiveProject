@@ -9,3 +9,16 @@
 ## Design
   ![image](https://github.com/rlaqudgus/KuChiveProject/assets/119485240/d2a72260-a1f0-4baf-9ade-bcb4acf5f4ea)
 
+### Dialogue Scene
+  대화 과정을 UI Canvas를 순서에 맞춰 진행하였으며 플레이어의 이동 및 spacebar에 맞춰서 진행하였습니다.
+
+### Fishing Scene
+
+이동 및 낚시를 구현 했으며 물고기 모으기, 위치 확인, 물고기 추가 등의 특수 기술을 사용하였습니다.
+물고기의 움직임은 좌, 우, 정지 및 이동 시간을 무작위로 설정하여 예측하기 어려운 움직임을 구현하였습니다.
+
+![스크린샷 2024-01-10 143735.png](https://prod-files-secure.s3.us-west-2.amazonaws.com/0016ec8e-4bf8-4d7a-88db-60ab756e84ab/c395afb3-18a7-4d57-9e5f-6ebc033b99ff/%EC%8A%A4%ED%81%AC%EB%A6%B0%EC%83%B7_2024-01-10_143735.png)
+
+### Running Scene
+
+방해를 피해 완성 게이지를 채우는 것을 목표로 스페이스바 하나로 점프, 이단 점프 등을 구현했습니다.
