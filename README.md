@@ -7,4 +7,5 @@
 
 ---
 ## Design
-  rgd
+  ![image](https://github.com/rlaqudgus/KuChiveProject/assets/119485240/d2a72260-a1f0-4baf-9ade-bcb4acf5f4ea)
+
